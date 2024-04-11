@@ -1,0 +1,34 @@
+
+
+✅ 1. Setup code environment
+
+✅ 2. Create die components
+
+✅ 3. Generate array of 10 random numbers
+
+✅ 4. Map array to Die components
+
+✅ 5. Create Roll Dice button
+
+✅ 6. Change Dice into objects
+
+✅ 7. Style the held dice
+
+✅ 8. Create hold dice functionality
+
+   - Create a function `holdDice` that takes
+     `id` as a parameter.
+   - Then, figure out how to pass that function down to each
+     instance of the Die component so when each one is clicked, it logs its own unique ID property.
+   - Update holdDice function to flip isHeld property based on
+     id prop
+   - Update rollDice function to only roll ones not held
+
+9. Create end game functionality
+
+   - Add new 'tenzies' state
+   - Add useEffect that runs when dice array changes
+   - Check dice array for winning conditions
+   - If true, update tenzies, change button text, confet
+
+10. Allow for game reset
