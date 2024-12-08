@@ -82,16 +82,16 @@ export default function App() {
 
   const TheCode = () => {
     const theCode = (
-      <>
-        <p>FiBi</p>
+      <div className="code">
+        <p>FlBl</p>
         <p>SoWh</p>
         <p>FlOr</p>
-        <p>FiNa</p>
+        <p>FlNa</p>
         <p>SoGr</p>
         <p>StBl</p>
         <p>SoBl</p>
         <p>SoBk</p>
-      </>
+      </div>
     );
 
     return theCode;
@@ -103,7 +103,7 @@ export default function App() {
       <h1 className="title">{twelvzies ? 'THE CODE' : "We Rollin'"}</h1>
       <h2 className="description">
         {twelvzies ? (
-          <TheCode />
+          <TheCode className="code" />
         ) : (
           'Click a number to freeze it. Roll until all are the same!'
         )}
