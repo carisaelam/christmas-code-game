@@ -6,7 +6,7 @@ import { nanoid, random } from 'nanoid';
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice);
   const [twelvzies, setTwelvzies] = React.useState(false);
-
+  const [confettiVisible, setConfettiVisible] = React.useState(false);
 
   const diceElements = dice.map((die) => {
     const randomNumber = Math.ceil(Math.random() * 6);
@@ -26,6 +26,11 @@ export default function App() {
     const allSame = dice.every((die) => die.value === dice[0].value);
     if (allHeld && allSame) {
       setTwelvzies(true);
+      setConfettiVisible(true);
+
+      setTimeout(() => {
+        setConfettiVisible(false);
+      }, 8000);
     }
   }, [dice]);
 
@@ -94,7 +99,7 @@ export default function App() {
 
   return (
     <main style={{ backgroundColor: twelvzies && 'cornflowerblue' }}>
-      {twelvzies && <Confetti />}
+      {confettiVisible && <Confetti />}
       <h1 className="title">{twelvzies ? 'THE CODE' : "We Rollin'"}</h1>
       <h2 className="description">
         {twelvzies ? (
