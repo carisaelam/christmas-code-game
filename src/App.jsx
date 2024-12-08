@@ -103,7 +103,7 @@ export default function App() {
       <h1 className="title">{twelvzies ? 'THE CODE' : "We Rollin'"}</h1>
       <h2 className="description">
         {twelvzies ? (
-          <CodePics />
+          <TheCode />
         ) : (
           'Click a number to freeze it. Roll until all are the same!'
         )}
