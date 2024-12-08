@@ -1,7 +1,7 @@
-import React from "react";
-import Dice from "./Dice.jsx";
-import Confetti from "react-confetti";
-import { nanoid, random } from "nanoid";
+import React from 'react';
+import Dice from './Dice.jsx';
+import Confetti from 'react-confetti';
+import { nanoid, random } from 'nanoid';
 
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice);
@@ -62,20 +62,39 @@ export default function App() {
     );
   }
 
+  const TheCode = () => {
+    const theCode = (
+      <>
+        <p>FiBi</p>
+        <p>SoWh</p>
+        <p>FlOr</p>
+        <p>FiNa</p>
+        <p>SoGr</p>
+        <p>StBl</p>
+        <p>SoBl</p>
+        <p>SoBk</p>
+      </>
+    
+    );
+
+    return theCode;
+  };
+
   return (
-    <main style={{ backgroundColor: twelvzies && "cornflowerblue" }}>
+    <main style={{ backgroundColor: twelvzies && 'cornflowerblue' }}>
       {twelvzies && <Confetti />}
-      <h1 className="title">{twelvzies ? "YOU WIN" : "Twelvzies"}</h1>
+      <h1 className="title">{twelvzies ? 'THE CODE' : "We Rollin'"}</h1>
       <h2 className="description">
-        {twelvzies
-          ? ""
-          : "Click the numbers to freeze. Roll until all are the same!"}
+        {twelvzies ? (
+          <TheCode />
+        ) : (
+          'Click a number to freeze it. Roll until all are the same!'
+        )}
       </h2>
-      <div className="dice__container">{diceElements}</div>
+      <div className="dice__container">{twelvzies ? '' : diceElements}</div>
       <button onClick={rollDice} className="roll__dice__button">
-        {twelvzies ? "RESET" : "Roll!"}
+        {twelvzies ? 'RESET' : 'Roll!'}
       </button>
     </main>
   );
 }
-
