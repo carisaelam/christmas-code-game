@@ -7,6 +7,7 @@ export default function App() {
   const [dice, setDice] = React.useState(allNewDice);
   const [twelvzies, setTwelvzies] = React.useState(false);
 
+
   const diceElements = dice.map((die) => {
     const randomNumber = Math.ceil(Math.random() * 6);
 
@@ -62,6 +63,18 @@ export default function App() {
     );
   }
 
+  const CodePics = () => {
+    const thePics = (
+      <>
+        <img src="/code-pic-1.png" alt="pic-1" />
+        <br />
+        <img src="/code-pic-2.png" alt="pic-2" />
+      </>
+    );
+
+    return thePics;
+  };
+
   const TheCode = () => {
     const theCode = (
       <>
@@ -74,7 +87,6 @@ export default function App() {
         <p>SoBl</p>
         <p>SoBk</p>
       </>
-    
     );
 
     return theCode;
@@ -86,7 +98,7 @@ export default function App() {
       <h1 className="title">{twelvzies ? 'THE CODE' : "We Rollin'"}</h1>
       <h2 className="description">
         {twelvzies ? (
-          <TheCode />
+          <CodePics />
         ) : (
           'Click a number to freeze it. Roll until all are the same!'
         )}
